@@ -5,26 +5,22 @@
 </script>
 
 <style lang="scss">
-  main {
-    width: 100vw;
-    height: 100vh;
-
-    margin: 1rem;
+  main{
     display: grid;
     grid: {
-      template: {
-        rows: 7fr 3fr;
-      };
-      row-gap: 9px;
+      template-areas:
+              "b b m"
+              "b b m"
+              "c c c"
     };
-  }
-  .board{
-    display: grid;
-    grid:{
-      template: {
-        columns: 3fr 2fr;
-      };
-      column-gap: 2px;
+    .chessBoard{
+      grid-area: b;
+    }
+    .moveExplorer{
+      grid-area: m;
+    }
+    .comments{
+      grid-area: c;
     }
   }
 
@@ -33,7 +29,10 @@
       color: #2f2929
     };
   }
-
+  :global(.app){
+    max-width: 100vw;
+    max-height: 100vh;
+  }
   :global(*){
     margin: 0;
     padding: 0;
@@ -45,11 +44,15 @@
 </style>
 
 <main>
-  <div class="board">
+  <div class="chessBoard">
     <ChessBoard />
+  </div>
+  <div class="moveExplorer">
     <MoveExplorer />
   </div>
-  <Comments />
+  <div class="comments">
+    <Comments />
+  </div>
 </main>
 
 
