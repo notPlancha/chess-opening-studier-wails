@@ -7,13 +7,25 @@
 <style lang="scss">
   main{
     display: grid;
+    margin: {
+      left: 1.2vw;
+      right: 1.2vw;
+      top: 1vh;
+      bottom: 1vh;
+    };
     grid: {
       template-areas:
-              "b b m"
-              "b b m"
-              "c c c"
+              "b b m m"
+              "b b m m"
+              "c c c c"
     };
     .chessBoard{
+      margin: {
+        top: auto;
+        bottom: auto;
+        left: 0;
+        right: auto;
+      };
       grid-area: b;
     }
     .moveExplorer{
